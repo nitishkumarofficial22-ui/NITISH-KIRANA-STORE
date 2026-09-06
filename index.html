@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Nitish Kirana Store | Bhanpur, Dinara</title>
+
+  <meta
+    name="description"
+    content="Nitish Kirana Store - Bhanpur, Dinara, Rohtas. Grocery, राशन और daily needs. Home delivery available."
+  >
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, "Noto Sans Devanagari", sans-serif;
+      background: #f5f7f5;
+      color: #222;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* HEADER */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #ffffff;
+      box-shadow: 0 2px 15px rgba(0,0,0,.08);
+    }
+
+    .navbar {
+      max-width: 1200px;
+      margin: auto;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #16834b;
+      font-weight: 800;
+      font-size: 21px;
+    }
+
+    .logo-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: #16834b;
+      color: white;
+      display: grid;
+      place-items: center;
+      font-size: 22px;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+    }
+
+    nav a {
+      color: #333;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: #16834b;
+    }
+
+    /* HERO */
+
+    .hero {
+      background: linear-gradient(135deg, #e8f8ee, #ffffff);
+      padding: 75px 20px;
+    }
+
+    .hero-content {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.3fr .7fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      color: #116b3d;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 span {
+      color: #f59e0b;
+    }
+
+    .hero p {
+      font-size: 19px;
+      color: #555;
+      margin-bottom: 12px;
+    }
+
+    .hero-buttons {
+      margin-top: 25px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 13px 20px;
+      border-radius: 10px;
+      font-weight: 700;
+      display: inline-block;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: #16834b;
+      color: white;
+    }
+
+    .btn-whatsapp {
+      background: #25d366;
+      color: white;
+    }
+
+    .hero-card {
+      background: white;
+      border-radius: 25px;
+      padding: 40px;
+      text-align: center;
+      box-shadow: 0 10px 35px rgba(0,0,0,.08);
+    }
+
+    .hero-card .big-icon {
+      font-size: 80px;
+      margin-bottom: 10px;
+    }
+
+    .hero-card h3 {
+      color: #16834b;
+      font-size: 24px;
+    }
+
+    /* GENERAL */
+
+    section {
+      padding: 60px 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .section-title h2 {
+      font-size: 32px;
+      color: #116b3d;
+      margin-bottom: 8px;
+    }
+
+    .section-title p {
+      color: #666;
+    }
+
+    /* FEATURES */
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 20px;
+    }
+
+    .feature {
+      background: white;
+      padding: 25px;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 4px 18px rgba(0,0,0,.05);
+    }
+
+    .feature-icon {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    .feature h3 {
+      margin-bottom: 6px;
+      color: #16834b;
+    }
+
+    /* PRODUCTS */
+
+    .shop-controls {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      margin-bottom: 25px;
+      flex-wrap: wrap;
+    }
+
+    .search-box {
+      flex: 1;
+      min-width: 250px;
+      padding: 13px 16px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      font-size: 16px;
+      outline: none;
+    }
+
+    .categories {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .category {
+      border: none;
+      padding: 10px 15px;
+      border-radius: 20px;
+      background: #e7eee9;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .category.active,
+    .category:hover {
+      background: #16834b;
+      color: white;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 18px;
+    }
+
+    .product {
+      background: white;
+      border-radius: 16px;
+      padding: 18px;
+      box-shadow: 0 4px 18px rgba(0,0,0,.06);
+      transition: .2s;
+    }
+
+    .product:hover {
+      transform: translateY(-3px);
+    }
+
+    .product-image {
+      height: 130px;
+      border-radius: 12px;
+      background: #f0f6f1;
+      display: grid;
+      place-items: center;
+      font-size: 60px;
+      margin-bottom: 15px;
+    }
+
+    .product h3 {
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    .product-category {
+      font-size: 13px;
+      color: #777;
+      margin-bottom: 8px;
+    }
+
+    .product-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 12px;
+    }
+
+    .price {
+      font-size: 19px;
+      font-weight: 800;
+      color: #16834b;
+    }
+
+    .add-btn {
+      background: #16834b;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 9px 12px;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    /* CART */
+
+    .cart-section {
+      background: #eef7f1;
+    }
+
+    .cart {
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      border-radius: 18px;
+      padding: 25px;
+      box-shadow: 0 5px 20px rgba(0,0,0,.06);
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      padding: 15px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .cart-item-info h4 {
+      margin-bottom: 4px;
+    }
+
+    .quantity {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .quantity button {
+      width: 30px;
+      height: 30px;
+      border: none;
+      background: #e7eee9;
+      border-radius: 7px;
+      cursor: pointer;
+      font-size: 18px;
+    }
+
+    .cart-total {
+      text-align: right;
+      font-size: 22px;
+      font-weight: 800;
+      margin: 20px 0;
+      color: #16834b;
+    }
+
+    .empty-cart {
+      text-align: center;
+      color: #777;
+      padding: 20px;
+    }
+
+    /* CONTACT */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 20px;
+    }
+
+    .contact-card {
+      background: white;
+      border-radius: 16px;
+      padding: 25px;
+      text-align: center;
+      box-shadow: 0 4px 18px rgba(0,0,0,.05);
+    }
+
+    .contact-card .icon {
+      font-size: 35px;
+      margin-bottom: 10px;
+    }
+
+    .contact-card h3 {
+      color: #16834b;
+      margin-bottom: 7px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #103d27;
+      color: white;
+      text-align: center;
+      padding: 35px 20px;
+    }
+
+    footer h3 {
+      margin-bottom: 8px;
+    }
+
+    footer p {
+      opacity: .85;
+      margin: 5px 0;
+    }
+
+    /* MOBILE */
+
+    @media(max-width: 900px) {
+      .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .products {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .features,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media(max-width: 600px) {
+      nav {
+        display: none;
+      }
+
+      .hero {
+        padding: 55px 18px;
+      }
+
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      section {
+        padding: 45px 15px;
+      }
+
+      .products {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+
+      .product {
+        padding: 12px;
+      }
+
+      .product-image {
+        height: 100px;
+        font-size: 45px;
+      }
+
+      .product h3 {
+        font-size: 15px;
+      }
+
+      .product-bottom {
+        display: block;
+      }
+
+      .add-btn {
+        width: 100%;
+        margin-top: 8px;
+      }
+
+      .cart-item {
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+  <div class="navbar">
+
+    <a href="#home" class="logo">
+      <span class="logo-icon">🛒</span>
+      Nitish Kirana Store
+    </a>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#products">Products</a>
+      <a href="#cart">Cart</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+  </div>
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+  <div class="hero-content">
+
+    <div>
+
+      <h1>
+        Nitish <span>Kirana Store</span>
+      </h1>
+
+      <p>
+        आपकी रोज़मर्रा की जरूरतों का भरोसेमंद स्टोर।
+      </p>
+
+      <p>
+        📍 Bhanpur, Dinara, Rohtas, Bihar
+      </p>
+
+      <p>
+        🕕 सुबह 6:00 बजे से रात 9:00 बजे तक
+      </p>
+
+      <div class="hero-buttons">
+
+        <a
+          href="tel:9204378594"
+          class="btn btn-primary"
+        >
+          📞 Call Now
+        </a>
+
+        <a
+          href="https://wa.me/919204378594"
+          class="btn btn-whatsapp"
+          target="_blank"
+        >
+          💬 WhatsApp
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="hero-card">
+
+      <div class="big-icon">🛒</div>
+
+      <h3>Home Delivery Available</h3>
+
+      <p>
+        घर बैठे सामान का order करें।
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FEATURES -->
+
+<section>
+
+  <div class="container">
+
+    <div class="section-title">
+      <h2>हमारी सुविधाएँ</h2>
+      <p>आपकी सुविधा के लिए बेहतर service</p>
+    </div>
+
+    <div class="features">
+
+      <div class="feature">
+        <div class="feature-icon">🏠</div>
+        <h3>Home Delivery</h3>
+        <p>घर तक सामान पहुँचाने की सुविधा।</p>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">💳</div>
+        <h3>UPI Payment</h3>
+        <p>UPI payment की सुविधा उपलब्ध।</p>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">📞</div>
+        <h3>Easy Ordering</h3>
+        <p>Phone या WhatsApp से order करें।</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- PRODUCTS -->
+
+<section id="products">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2>🛍️ हमारे Products</h2>
+
+      <p>
+        अपनी जरूरत का सामान खोजें और cart में add करें।
+      </p>
+
+    </div>
+
+
+    <div class="shop-controls">
+
+      <input
+        type="text"
+        id="search"
+        class="search-box"
+        placeholder="🔎 Product search करें..."
+      >
+
+      <div class="categories">
+
+        <button
+          class="category active"
+          onclick="filterCategory('all', this)"
+        >
+          सभी
+        </button>
+
+        <button
+          class="category"
+          onclick="filterCategory('राशन', this)"
+        >
+          🌾 राशन
+        </button>
+
+        <button
+          class="category"
+          onclick="filterCategory('दाल', this)"
+        >
+          🫘 दाल
+        </button>
+
+        <button
+          class="category"
+          onclick="filterCategory('मसाले', this)"
+        >
+          🌶️ मसाले
+        </button>
+
+        <button
+          class="category"
+          onclick="filterCategory('snacks', this)"
+        >
+          🍪 Snacks
+        </button>
+
+        <button
+          class="category"
+          onclick="filterCategory('household', this)"
+        >
+          🏠 Household
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <div id="productsGrid" class="products"></div>
+
+  </div>
+
+</section>
+
+
+<!-- CART -->
+
+<section class="cart-section" id="cart">
+
+  <div class="container">
+
+    <div class="section-title">
+      <h2>🛒 आपका Cart</h2>
+      <p>Order भेजने से पहले अपना सामान check करें।</p>
+    </div>
+
+    <div class="cart">
+
+      <div id="cartItems">
+        <div class="empty-cart">
+          आपका cart अभी खाली है।
+        </div>
+      </div>
+
+      <div
+        id="cartTotal"
+        class="cart-total"
+      >
+        Total: ₹0
+      </div>
+
+      <button
+        onclick="sendWhatsAppOrder()"
+        class="btn btn-whatsapp"
+        style="width:100%;font-size:17px"
+      >
+        💬 WhatsApp पर Order भेजें
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2>📍 Contact Us</h2>
+
+      <p>
+        Nitish Kirana Store से संपर्क करें।
+      </p>
+
+    </div>
+
+
+    <div class="contact-grid">
+
+      <div class="contact-card">
+
+        <div class="icon">📞</div>
+
+        <h3>Phone</h3>
+
+        <a href="tel:9204378594">
+          9204378594
+        </a>
+
+      </div>
+
+
+      <div class="contact-card">
+
+        <div class="icon">📍</div>
+
+        <h3>Address</h3>
+
+        <p>
+          Bhanpur, Dinara,<br>
+          Rohtas, Bihar
+        </p>
+
+      </div>
+
+
+      <div class="contact-card">
+
+        <div class="icon">🕐</div>
+
+        <h3>Opening Hours</h3>
+
+        <p>
+          6:00 AM – 9:00 PM
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  <h3>🛒 Nitish Kirana Store</h3>
+
+  <p>
+    Bhanpur, Dinara, Rohtas, Bihar
+  </p>
+
+  <p>
+    📞 9204378594
+  </p>
+
+  <p>
+    Home Delivery • UPI Payment
+  </p>
+
+  <p style="margin-top:15px">
+    © 2026 Nitish Kirana Store. All Rights Reserved.
+  </p>
+
+</footer>
+
+
+<script>
+
+  /*
+    PRODUCT DATA
+
+    यहाँ बाद में आप अपने असली
+    products और prices डाल सकते हैं।
+  */
+
+  const products = [
+
+    {
+      id: 1,
+      name: "चावल",
+      category: "राशन",
+      price: 60,
+      unit: "kg",
+      icon: "🍚"
+    },
+
+    {
+      id: 2,
+      name: "आटा",
+      category: "राशन",
+      price: 45,
+      unit: "kg",
+      icon: "🌾"
+    },
+
+    {
+      id: 3,
+      name: "अरहर दाल",
+      category: "दाल",
+      price: 120,
+      unit: "kg",
+      icon: "🫘"
+    },
+
+    {
+      id: 4,
+      name: "मसूर दाल",
+      category: "दाल",
+      price: 100,
+      unit: "kg",
+      icon: "🫘"
+    },
+
+    {
+      id: 5,
+      name: "सरसों तेल",
+      category: "राशन",
+      price: 140,
+      unit: "L",
+      icon: "🫗"
+    },
+
+    {
+      id: 6,
+      name: "हल्दी",
+      category: "मसाले",
+      price: 35,
+      unit: "packet",
+      icon: "🌶️"
+    },
+
+    {
+      id: 7,
+      name: "मिर्च पाउडर",
+      category: "मसाले",
+      price: 40,
+      unit: "packet",
+      icon: "🌶️"
+    },
+
+    {
+      id: 8,
+      name: "बिस्कुट",
+      category: "snacks",
+      price: 10,
+      unit: "packet",
+      icon: "🍪"
+    },
+
+    {
+      id: 9,
+      name: "नमकीन",
+      category: "snacks",
+      price: 20,
+      unit: "packet",
+      icon: "🥨"
+    },
+
+    {
+      id: 10,
+      name: "चाय",
+      category: "राशन",
+      price: 80,
+      unit: "packet",
+      icon: "☕"
+    },
+
+    {
+      id: 11,
+      name: "साबुन",
+      category: "household",
+      price: 35,
+      unit: "piece",
+      icon: "🧼"
+    },
+
+    {
+      id: 12,
+      name: "डिटर्जेंट",
+      category: "household",
+      price: 60,
+      unit: "packet",
+      icon: "🧺"
+    }
+
+  ];
+
+
+  let cart = [];
+
+  let currentCategory = "all";
+
+
+  /* DISPLAY PRODUCTS */
+
+  function displayProducts() {
+
+    const grid = document.getElementById("productsGrid");
+
+    const searchValue =
+      document
+      .getElementById("search")
+      .value
+      .toLowerCase()
+      .trim();
+
+
+    const filtered = products.filter(product => {
+
+      const matchesCategory =
+        currentCategory === "all" ||
+        product.category === currentCategory;
+
+      const matchesSearch =
+        product.name
+        .toLowerCase()
+        .includes(searchValue);
+
+      return matchesCategory && matchesSearch;
+
+    });
+
+
+    if (filtered.length === 0) {
+
+      grid.innerHTML = `
+        <div style="grid-column:1/-1;text-align:center;padding:40px">
+          😕 कोई product नहीं मिला।
+        </div>
+      `;
+
+      return;
+    }
+
+
+    grid.innerHTML = filtered.map(product => `
+
+      <div class="product">
+
+        <div class="product-image">
+          ${product.icon}
+        </div>
+
+        <h3>${product.name}</h3>
+
+        <div class="product-category">
+          ${product.category}
+        </div>
+
+        <div class="product-bottom">
+
+          <span class="price">
+            ₹${product.price}/${product.unit}
+          </span>
+
+          <button
+            class="add-btn"
+            onclick="addToCart(${product.id})"
+          >
+            + Add
+          </button>
+
+        </div>
+
+      </div>
+
+    `).join("");
+
+  }
+
+
+  /* CATEGORY FILTER */
+
+  function filterCategory(category, button) {
+
+    currentCategory = category;
+
+    document
+      .querySelectorAll(".category")
+      .forEach(btn => btn.classList.remove("active"));
+
+    button.classList.add("active");
+
+    displayProducts();
+
+  }
+
+
+  /* ADD TO CART */
+
+  function addToCart(id) {
+
+    const product =
+      products.find(item => item.id === id);
+
+    const existing =
+      cart.find(item => item.id === id);
+
+
+    if (existing) {
+
+      existing.quantity++;
+
+    } else {
+
+      cart.push({
+        ...product,
+        quantity: 1
+      });
+
+    }
+
+
+    renderCart();
+
+    document
+      .getElementById("cart")
+      .scrollIntoView({
+        behavior: "smooth"
+      });
+
+  }
+
+
+  /* CHANGE QUANTITY */
+
+  function changeQuantity(id, change) {
+
+    const item =
+      cart.find(product => product.id === id);
+
+    if (!item) return;
+
+    item.quantity += change;
+
+
+    if (item.quantity <= 0) {
+
+      cart =
+        cart.filter(product => product.id !== id);
+
+    }
+
+
+    renderCart();
+
+  }
+
+
+  /* RENDER CART */
+
+  function renderCart() {
+
+    const cartItems =
+      document.getElementById("cartItems");
+
+    const totalElement =
+      document.getElementById("cartTotal");
+
+
+    if (cart.length === 0) {
+
+      cartItems.innerHTML = `
+        <div class="empty-cart">
+          आपका cart अभी खाली है।
+        </div>
+      `;
+
+      totalElement.innerText = "Total: ₹0";
+
+      return;
+
+    }
+
+
+    let total = 0;
+
+
+    cartItems.innerHTML = cart.map(item => {
+
+      const itemTotal =
+        item.price * item.quantity;
+
+      total += itemTotal;
+
+
+      return `
+
+        <div class="cart-item">
+
+          <div class="cart-item-info">
+
+            <h4>
+              ${item.icon} ${item.name}
+            </h4>
+
+            <small>
+              ₹${item.price}/${item.unit}
+            </small>
+
+          </div>
+
+
+          <div class="quantity">
+
+            <button
+              onclick="changeQuantity(${item.id}, -1)"
+            >
+              −
+            </button>
+
+            <strong>
+              ${item.quantity}
+            </strong>
+
+            <button
+              onclick="changeQuantity(${item.id}, 1)"
+            >
+              +
+            </button>
+
+          </div>
+
+
+          <strong>
+            ₹${itemTotal}
+          </strong>
+
+        </div>
+
+      `;
+
+    }).join("");
+
+
+    totalElement.innerText =
+      "Total: ₹" + total;
+
+  }
+
+
+  /* WHATSAPP ORDER */
+
+  function sendWhatsAppOrder() {
+
+    if (cart.length === 0) {
+
+      alert("पहले cart में सामान add करें।");
+
+      return;
+
+    }
+
+
+    let message =
+      "Namaste Nitish Kirana Store!%0A%0A" +
+      "Mujhe ye samaan order karna hai:%0A%0A";
+
+
+    let total = 0;
+
+
+    cart.forEach(item => {
+
+      const itemTotal =
+        item.price * item.quantity;
+
+      total += itemTotal;
+
+
+      message +=
+        `${item.name} - ${item.quantity} x ₹${item.price} = ₹${itemTotal}%0A`;
+
+    });
+
+
+    message +=
+      `%0AEstimated Total: ₹${total}` +
+      `%0A%0A` +
+      `Please confirm my order.`;
+
+
+    const whatsappURL =
+      "https://wa.me/919204378594?text=" +
+      message;
+
+
+    window.open(
+      whatsappURL,
+      "_blank"
+    );
+
+  }
+
+
+  /* SEARCH */
+
+  document
+    .getElementById("search")
+    .addEventListener(
+      "input",
+      displayProducts
+    );
+
+
+  /* INITIAL LOAD */
+
+  displayProducts();
+
+  renderCart();
+
+</script>
+
+</body>
+</html>
